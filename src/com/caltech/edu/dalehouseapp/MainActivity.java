@@ -2,11 +2,13 @@ package com.caltech.edu.dalehouseapp;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.content.Intent;
 import android.view.Menu;
 import android.view.View;
-import android.view.View.OnClickListener;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
-import android.widget.Toast;
+import android.widget.GridView;
 
 public class MainActivity extends Activity {
 
@@ -27,28 +29,68 @@ public class MainActivity extends Activity {
 	
     @Override
     public void onCreate(Bundle savedInstanceState) {
+//        super.onCreate(savedInstanceState);
+//        setContentView(R.layout.activity_main);
+//        b1 = (Button) findViewById(R.id.button1);
+//        b1.setOnClickListener(new OnClickListener() {
+//
+//			@Override
+//			public void onClick(View arg0) {
+//				if (b1_b == false) {
+//					Toast.makeText(getApplicationContext(), "TV is on", Toast.LENGTH_SHORT).show();
+//					b1_b = true;
+//				} else {
+//					Toast.makeText(getApplicationContext(), "TV is off", Toast.LENGTH_SHORT).show();
+//					b1_b = false;
+//				}
+//			}
+//        	
+//        });
+//        b2 = (Button) findViewById(R.id.button2);
+//        b3 = (Button) findViewById(R.id.button3);
+//        b4 = (Button) findViewById(R.id.button4);
+//        b5 = (Button) findViewById(R.id.button5);
+//        b6 = (Button) findViewById(R.id.button6);
+        
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        b1 = (Button) findViewById(R.id.button1);
-        b1.setOnClickListener(new OnClickListener() {
+        setContentView(R.layout.grid_layout);
+        
+        GridView gridView = (GridView) findViewById(R.id.grid_view);
+ 
+        // Instance of ImageAdapter Class
+        gridView.setAdapter(new ImageAdapter(this));
+        
+        gridView.setOnItemClickListener(new OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View v,
+                    int position, long id) {
+                Intent i;
+                switch (position) {
+                
+                case 0:
+                    i = new Intent(getApplicationContext(), TVActivity.class);
+                    startActivity(i);
+                    break;
+                case 1:
+                    i = new Intent(getApplicationContext(), SpeakerActivity.class);
+                    startActivity(i);
+                    break;
+                case 2:
+                    i = new Intent(getApplicationContext(), BluRayActivity.class);
+                    startActivity(i);
+                    break;
+                case 3:
+                    i = new Intent(getApplicationContext(), ProjectorActivity.class);
+                    startActivity(i);
+                    break;
+                case 4:
+                    i = new Intent(getApplicationContext(), LightsActivity.class);
+                    startActivity(i);
+                    break;
+                }
+            }
 
-			@Override
-			public void onClick(View arg0) {
-				if (b1_b == false) {
-					Toast.makeText(getApplicationContext(), "TV is on", Toast.LENGTH_SHORT).show();
-					b1_b = true;
-				} else {
-					Toast.makeText(getApplicationContext(), "TV is off", Toast.LENGTH_SHORT).show();
-					b1_b = false;
-				}
-			}
-        	
         });
-        b2 = (Button) findViewById(R.id.button2);
-        b3 = (Button) findViewById(R.id.button3);
-        b4 = (Button) findViewById(R.id.button4);
-        b5 = (Button) findViewById(R.id.button5);
-        b6 = (Button) findViewById(R.id.button6);
     }
 
     @Override
