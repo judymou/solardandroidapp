@@ -32,7 +32,6 @@ public class MainActivity extends Activity {
         b1 = (Button) findViewById(R.id.button1);
         b1.setOnClickListener(new OnClickListener() {
 
-			@Override
 			public void onClick(View arg0) {
 				if (b1_b == false) {
 					Toast.makeText(getApplicationContext(), "TV is on", Toast.LENGTH_SHORT).show();
