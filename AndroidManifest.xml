@@ -20,6 +20,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        
+        <activity android:name=".TVActivity"></activity>
+        <activity android:name=".SpeakerActivity"></activity>
+        <activity android:name=".BluRayActivity"></activity>
+        <activity android:name=".ProjectorActivity"></activity>
+        <activity android:name=".LightsActivity"></activity>
+        <activity android:name=".BlindsActivity"></activity>
+        <activity android:name=".ThermostatActivity"></activity>
     </application>
 
 </manifest>
