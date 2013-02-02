@@ -1,0 +1,1 @@
+INDEX VERSION 1.126+C:\Users\Lucia\Documents\ME 75\solardandroidapp\.metadata\.plugins\org.eclipse.jdt.core
